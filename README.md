@@ -206,3 +206,101 @@ footer {
     text-align: center;
     padding: 10px;
 }
+<section class="latest-news">
+    <h2>Latest News</h2>
+    <label for="news-filter">Filter by category:</label>
+    <select id="news-filter" onchange="filterArticles()">
+        <option value="all">All</option>
+        <option value="releases">New Releases</option>
+        <option value="tips">Tips & Tricks</option>
+        <option value="evolution">RPG Evolution</option>
+    </select>
+
+    <div id="articles">
+        <article class="news-item" data-category="releases">
+            <h3><a href="news.html#news1">New Game Release: Adventure Awaits!</a></h3>
+            <img src="game-release-image.jpg" alt="Game Release" style="width:100%; height:auto;">
+            <p>Get ready for the newest adventure game that has taken the world by storm!</p>
+        </article>
+
+        <article class="news-item" data-category="tips">
+            <h3><a href="news.html#news2">Top 10 Tips for Winning in Battle Royale</a></h3>
+            <img src="battle-royale-image.jpg" alt="Battle Royale" style="width:100%; height:auto;">
+            <p>Master the battlefield with these essential strategies!</p>
+        </article>
+
+        <article class="news-item" data-category="evolution">
+            <h3><a href="news.html#news3">The Evolution of RPGs Over the Years</a></h3>
+            <img src="rpg-evolution-image.jpg" alt="RPG Evolution" style="width:100%; height:auto;">
+            <p>Explore how role-playing games have transformed the gaming landscape!</p>
+        </article>
+
+        <!-- Add more articles as needed -->
+    </div>
+</section>
+<script>
+    function filterArticles() {
+        const filter = document.getElementById('news-filter').value;
+        const articles = document.querySelectorAll('.news-item');
+
+        articles.forEach(article => {
+            if (filter === 'all' || article.dataset.category === filter) {
+                article.style.display = '';
+            } else {
+                article.style.display = 'none';
+            }
+        });
+    }
+</script>
+select {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: #00ffcc;
+    margin-bottom: 20px;
+}
+<section class="latest-news">
+    <h2>Latest News</h2>
+    <label for="news-filter">Filter by category:</label>
+    <select id="news-filter" onchange="filterArticles()">
+        <option value="all">All</option>
+        <option value="releases">New Releases</option>
+        <option value="tips">Tips & Tricks</option>
+        <option value="evolution">RPG Evolution</option>
+        <option value="league">League of Legends</option>
+    </select>
+
+    <div id="articles">
+        <article class="news-item" data-category="releases">
+            <h3><a href="news.html#news1">New Game Release: Adventure Awaits!</a></h3>
+            <img src="game-release-image.jpg" alt="Game Release" style="width:100%; height:auto;">
+            <p>Get ready for the newest adventure game that has taken the world by storm!</p>
+        </article>
+
+        <article class="news-item" data-category="tips">
+            <h3><a href="news.html#news2">Top 10 Tips for Winning in Battle Royale</a></h3>
+            <img src="battle-royale-image.jpg" alt="Battle Royale" style="width:100%; height:auto;">
+            <p>Master the battlefield with these essential strategies!</p>
+        </article>
+
+        <article class="news-item" data-category="evolution">
+            <h3><a href="news.html#news3">The Evolution of RPGs Over the Years</a></h3>
+            <img src="rpg-evolution-image.jpg" alt="RPG Evolution" style="width:100%; height:auto;">
+            <p>Explore how role-playing games have transformed the gaming landscape!</p>
+        </article>
+
+        <article class="news-item" data-category="league">
+            <h3><a href="news.html#news4">League of Legends: The New Season Begins!</a></h3>
+            <img src="league-of-legends-image.jpg" alt="League of Legends" style="width:100%; height:auto;">
+            <p>The new season of League of Legends is here, featuring exciting updates and champions!</p>
+        </article>
+
+        <!-- Add more articles as needed -->
+    </div>
+</section>
+.latest-news img {
+    margin: 10px 0;
+    max-width: 100%; /* Ensures responsiveness */
+    height: auto;    /* Maintains aspect ratio */
+}
